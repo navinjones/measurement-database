@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Tailor Measurement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"]button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+    <div>
+      <link href="../static/css/search.css" rel="stylesheet" />
+      <div class="search-container">
+        <div class="search-search">
+          <div class="search-group7">
+            <span class="search-head"><span>Result:</span>
+            <span class="search-text"><span>Tailor</span></span>
+            <span class="search-text02"><span>Place</span></span>
+            <span class="search-text04"><span><a href="{{url_for('new_order')}}">New Order</a></span></span>
+            <span class="search-text06"><span><a href="{{url_for('view_all_orders')}}">View Orders</a></span></span>
+            <span class="search-text08"><span><a href="{{url_for('search')}}">Search</a></span></span>
+            <span class="search-text14"><span><a href="{{url_for('home')}}">Dashboard</a></span></span>
+          </div>
+
+          <div style="margin-left:250px; margin-top:7%; position: fixed;">
+            <table>
+              {% for value in data.items() %}
+              <tr style="font-weight: 600;">
+                  {% for cell in value %}
+                 <td>{{ cell }}</td>
+                 
+                 {% endfor %}
+              </tr>
+              {% endfor %}
+            </table>
+            <br>
+            <a href="{{url_for('update_record', ph=data['phonenumber'], dr=data['dress'])}}"  style="background-color: #7733e7;color: white; padding: 5px; border-radius: 3px; position: absolute;">Update</a>
+            
+            <a onclick="alert('Record Deleted Successfully!')" href="{{url_for('delete_record', ph=data['phonenumber'], dr=data['dress'])}}"  style="background-color: #ff0606;color: white; padding: 5px; border-radius: 3px; margin-left: 40%;  position: absolute;">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

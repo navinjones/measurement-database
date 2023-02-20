@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Tailor Measurement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}
+      * {  box-sizing: border-box;  border-width: 0;  border-style: solid;}
+      p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}
+      button {  background-color: transparent;}
+      button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}
+      button,select {  text-transform: none;}
+      button,[type="button"],[type="reset"],[type="submit"]
+      button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}
+      button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}
+      a {  color: inherit;  text-decoration: inherit;}
+      input {  padding: 2px 4px;}
+      img {  display: block;
+      }html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+    <div>
+      <link href="../static/css/finalizeorder.css" rel="stylesheet" />
+
+      <div class="finalizeorder-container">
+        <div class="finalizeorder-finalizeorder">
+          <div class="finalizeorder-group7">
+            <span class="finalizeorder-text"><span>Friends Tailors</span></span>
+            <span class="finalizeorder-text02"><span>Melapalayam</span></span>
+            <span class="finalizeorder-text04"><span><a href="{{url_for('new_order')}}">New Order</a></span></span>
+            <span class="finalizeorder-text06"><span><a href="{{url_for('view_all_orders')}}">View Orders</a></span></span>
+            <span class="finalizeorder-text08"><span><a href="{{url_for('search')}}">Search</a></span></span>
+            <span class="finalizeorder-text14"><span><a href="{{url_for('home')}}">Dashboard</a></span></span>
+          </div>
+          <div class="finalizeorder-rectangle22"></div>
+          <form action="{{url_for('finalize_order')}}" method="post">
+          <span class="finalizeorder-text18"><span>👕 Shirt</span></span>
+          <div class="finalizeorder-group26">
+            <span class="finalizeorder-text20"><span><button onclick="alert('Data Saved Successfully!')" type="submit">Add</button></span></span>
+          </div>
+          <span class="finalizeorder-text32"><span>Finalize order:</span></span>
+          <span class="finalizeorder-text22"><span>Name: {{main_data['info']['name']}}</span></span>
+          <span class="finalizeorder-text24"><span>Phone Number: {{main_data['info']['phonenumber']}}</span></span>
+          <span class="finalizeorder-text26"><span>Order id: {{main_data['info']['orderid']}}</span></span>
+          <span class="finalizeorder-text28"><span>Date: {{main_data['info']['date']}}</span></span>
+          <span class="finalizeorder-text30"><span>Dress:</span></span>
+          <input type="text"
+                 name="delivery_date"
+            class="finalizeorder-rectangle13"
+          />
+          <input type="text"
+                 name="amount"
+            class="finalizeorder-rectangle14"
+          />
+
+          <span class="finalizeorder-text34"><span>Delivery Date:</span></span>
+          <span class="finalizeorder-text36"><span>Amount:</span></span>
+            </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

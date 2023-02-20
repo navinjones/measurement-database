@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Tailor Measurement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}
+      body {  margin: 0;}
+      * {  box-sizing: border-box;  border-width: 0;  border-style: solid;}
+      p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}
+      button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}
+      button,select {  text-transform: none;}
+      button,[type="button"],[type="reset"],[type="submit"] 
+      button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}
+      button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}
+      a {  color: inherit;  text-decoration: inherit;}
+      input {  padding: 2px 4px;}
+      img {  display: block;}
+      html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+    <div>
+      <link href="{{ url_for('static', filename='css/updateorderpant.css') }}" rel="stylesheet" />
+
+      <div class="neworder-container">
+        <div class="neworder-neworder">
+          <div class="neworder-group7">
+            <span class="neworder-text"><span>Friends Tailors</span></span>
+            <span class="neworder-text02"><span>Melapalayam</span></span>
+            <span class="neworder-text04"><span><a href="{{url_for('new_order')}}">New Order</a></span></span>
+            <span class="neworder-text06"><span><a href="{{url_for('view_all_orders')}}">View Orders</a></span></span>
+            <span class="neworder-text08"><span><a href="{{url_for('search')}}">Search</a></span></span>
+            <span class="neworder-text14"><span><a href="{{url_for('home')}}">Dashboard</a></span></span>
+          </div>
+         
+         
+          <form method="post">
+          <span class="neworder-text16"><span>update record</span></span>
+          <input
+            type="text"
+            name="name"
+            class="neworder-rectangle5"
+            value="{{data['name']}}"
+          />
+          <input
+            type="text"
+            name="address"
+            class="neworder-rectangle7"
+            value="{{data['address']}}"
+          />
+          <input
+            type="tel"
+            name="phonenumber"
+            class="neworder-rectangle6"
+            value="{{data['phonenumber']}}"
+          />
+          <span class="neworder-text18" ><span>Name:</span></span>
+          <span class="neworder-text20" ><span>Address:</span></span>
+          <span class="neworder-text22" ><span>Phone Number:</span></span>
+          <span class="neworder-text24" ><span>Dress</span></span>
+          
+
+        <div class="details">
+          <label class="waist" for="neworderpant-rectangle13">Waist</label><br>
+          <input type="number"
+                 name="waist"
+                 value="{{data['waist']}}"
+          class="neworderpant-rectangle13"
+          />
+
+          <label class="abdomen" for="neworderpant-rectangle14">Abdomen</label><br>
+          <input type="number"
+                 name="abdomen"
+                 value="{{data['abdomen']}}"
+          class="neworderpant-rectangle14"
+          />
+
+          <label class="hips" for="neworderpant-rectangle23">Hip</label><br>
+          <input type="number"
+                 name="hips"
+                 value="{{data['hips']}}"
+            class="neworderpant-rectangle23"
+          />
+
+          <label class="thigh" for="neworderpant-rectangle24">Thigh</label><br>
+          <input type="number"
+                 name="thigh"
+                 value="{{data['thigh']}}"
+            class="neworderpant-rectangle24"
+          />
+
+          <label class="knee" for="neworderpant-rectangle25">Knee</label><br>
+          <input type="number"
+                 name="knee"
+                 value="{{data['knee']}}"
+          class="neworderpant-rectangle25"
+          />
+
+          <label class="calf" for="neworderpant-rectangle26">Calf</label><br>
+          <input type="number"
+                 name="calf"
+                 value="{{data['calf']}}"
+          class="neworderpant-rectangle26"
+          />
+
+          <label class="instep" for="neworderpant-rectangle27">Instep</label><br>
+          <input type="number"
+                 name="instep"
+                 value="{{data['instep']}}"
+          class="neworderpant-rectangle27"
+          />
+
+          <label class="side_length_to_knee" for="neworderpant-rectangle28">Side length to knee</label><br>
+          <input type="number"
+                 name="side_length_to_knee"
+                 value="{{data['side_length_to _knee']}}"
+          class="neworderpant-rectangle28"
+          />
+
+          <label class="side_length" for="neworderpant-rectangle29">Side length</label><br>
+          <input type="number"
+                 name="side_length"
+                 value="{{data['side_length']}}"
+          class="neworderpant-rectangle29"
+          />
+
+          <label class="crotch_length" for="neworderpant-rectangle30">Crotch length</label><br>
+          <input type="number"
+                 name="crotch_length"
+                 value="{{data['crotch_length']}}"
+          class="neworderpant-rectangle30"
+          />
+
+          <label class="crotch_depth" for="neworderpant-rectangle31">Crotch depth</label><br>
+          <input type="number"
+                 name="crotch_depth"
+                 value="{{data['crotch_depth']}}"
+          class="neworderpant-rectangle31"
+          />
+        </div>
+          
+          <div class="neworder-group24">
+            <button onclick="alert('Record Updated Successfully!')" class="neworder-text26" type="submit" >Update</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
